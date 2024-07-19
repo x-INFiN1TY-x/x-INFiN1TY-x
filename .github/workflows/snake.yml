@@ -6,7 +6,7 @@ name: generate-snake-game-from-github-contribution-grid
 on:
   schedule:
       # every 6 hours
-    - cron: "0 */6 * * *"
+    - cron: "0 */3 * * *"
 
 # This command allows us to run the Action automatically from the Actions tab.
   workflow_dispatch:
@@ -41,7 +41,8 @@ jobs:
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
-            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+            dist/ocean.gif?color_snake=yellow&color_dots=#bff6f6,#89e0f7,#61ccf6,#49b7f6,#37a3f6
+
 
       # show the status of the build. Makes it easier for debugging (if there's any issues).
       - run: git status
