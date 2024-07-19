@@ -44,7 +44,7 @@ jobs:
           publish_branch: master
           publish_dir: dist
 
-      - uses: crazy-max/ghaction-github-pages@v3.0.1  # Updated to v3
+      - uses: crazy-max/ghaction-github-pages@v4.0.0  # Updated to v3
         with:
           # the output branch we mentioned above
           target_branch: output
