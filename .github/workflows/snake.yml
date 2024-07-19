@@ -52,4 +52,4 @@ jobs:
         with:
           branch: output  # The output branch
           folder: dist  # The folder to deploy
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
