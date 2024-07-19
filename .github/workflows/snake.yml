@@ -47,17 +47,9 @@ jobs:
       - run: git status
       
       # Push the changes
-      - name: Push changes
-        uses: s0/git-publish-subdir-action@develop  # Alternative to deprecated action
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4  # Use a well-maintained action for deployment
         with:
-          publish_repo: ${{ secrets.GITHUB_REPOSITORY }}
-          publish_branch: master
-          publish_dir: dist
-
-      - uses: crazy-max/ghaction-github-pages@v4.0.0  # Updated to v4
-        with:
-          # the output branch we mentioned above
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: output  # The output branch
+          folder: dist  # The folder to deploy
+          token: ${{ secrets.GITHUB_TOKEN }}
