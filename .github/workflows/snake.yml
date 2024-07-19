@@ -21,10 +21,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-    # Checks repo under $GITHUB_WORKSHOP, so your job can access it
-      - uses: actions/checkout@v3  # Updated to v3
+      # Checks repo under $GITHUB_WORKSHOP, so your job can access it
+      - uses: actions/checkout@v4  # Updated to v4
 
-    # Generates the snake  
+      # Generates the snake  
       - uses: Platane/snk@master
         id: snake-gif
         with:
@@ -38,13 +38,13 @@ jobs:
 
       # Push the changes
       - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0  # Updated to a stable version
+        uses: s0/git-publish-subdir-action@develop  # Alternative to deprecated action
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
-          force: true
+          publish_repo: ${{ secrets.GITHUB_REPOSITORY }}
+          publish_branch: master
+          publish_dir: dist
 
-      - uses: crazy-max/ghaction-github-pages@v2.1.3
+      - uses: crazy-max/ghaction-github-pages@v3.0.1  # Updated to v3
         with:
           # the output branch we mentioned above
           target_branch: output
