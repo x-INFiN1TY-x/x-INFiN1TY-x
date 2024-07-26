@@ -1,4 +1,4 @@
-## Sup y'all👋
+## Heya👋
 
 ![snake gif](https://github.com/x-INFiN1TY-x/x-INFiN1TY-x/blob/output/github-snake-dark.svg) 
 <!--
